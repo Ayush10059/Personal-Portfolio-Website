@@ -20,6 +20,8 @@ void bootstrap({
     logger.e(details.exceptionAsString(),
         error: details.exception, stackTrace: details.stack);
   };
+  
+  createEnv();
 
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
@@ -34,7 +36,6 @@ void bootstrap({
     ),
   );
 
-  createEnv();
 
   /// Configure DI
   configureInjection();

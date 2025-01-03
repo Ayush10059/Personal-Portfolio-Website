@@ -1,4 +1,3 @@
-import 'package:cv/src/core/base/env.dart';
 import 'package:cv/src/core/logger/logger.dart';
 import 'package:cv/src/core/routes/app_router.dart';
 import 'package:dio/dio.dart';
