@@ -4,7 +4,7 @@ import 'package:cv/src/core/base/env.dart';
 import 'package:cv/src/core/di/injector.dart';
 import 'package:cv/src/core/helpers/bloc_observer_helper.dart';
 import 'package:cv/src/core/logger/logger.dart';
-import 'package:cv/src/pages/app.dart';
+import 'package:cv/src/app/app.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -20,7 +20,7 @@ void bootstrap({
     logger.e(details.exceptionAsString(),
         error: details.exception, stackTrace: details.stack);
   };
-  
+
   createEnv();
 
   WidgetsFlutterBinding.ensureInitialized();
@@ -30,12 +30,11 @@ void bootstrap({
       authDomain: Env.instance.authDomainKey,
       projectId: Env.instance.projectIdKey,
       storageBucket: Env.instance.storageBucketKey,
-      messagingSenderId: Env.instance.messagingSenderIdKey, 
+      messagingSenderId: Env.instance.messagingSenderIdKey,
       appId: Env.instance.appIdKey,
       measurementId: Env.instance.measurementIdKey,
     ),
   );
-
 
   /// Configure DI
   configureInjection();
