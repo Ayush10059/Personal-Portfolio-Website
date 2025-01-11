@@ -29,7 +29,8 @@ class App extends StatelessWidget {
           builder: (BuildContext context, Widget? child) {
             ErrorWidget.builder = (FlutterErrorDetails details) => Center(
                   child: Text(
-                      'Flutter Error Screen ${details.exceptionAsString()}'),
+                    'Flutter Error Screen ${details.exceptionAsString()}',
+                  ),
                 );
             return child!;
           },
