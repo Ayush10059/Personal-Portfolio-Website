@@ -50,4 +50,4 @@ jobs:
           channelId: live
           projectId: ${{ secrets.PROJECT_ID }}
           target: default
-          entryPoint: build/web
+          entryPoint: .
