@@ -22,9 +22,21 @@ jobs:
 
       - name: 📦 Install dependencies
         run: flutter pub get
-     
+
+      - name: 🔐 Write .env_dev file for Envied
+        run: |
+          echo "API_KEY=${{ secrets.API_KEY }}" >> .env_dev
+          echo "AUTH_DOMAIN=${{ secrets.AUTH_DOMAIN }}" >> .env_dev
+          echo "PROJECT_ID=${{ secrets.PROJECT_ID }}" >> .env_dev
+          echo "STORAGE_BUCKET=${{ secrets.STORAGE_BUCKET }}" >> .env_dev
+          echo "MESSAGING_SENDER_ID=${{ secrets.MESSAGING_SENDER_ID }}" >> .env_dev
+          echo "APP_ID=${{ secrets.APP_ID }}" >> .env_dev
+          echo "MEASUREMENT_ID=${{ secrets.MEASUREMENT_ID }}" >> .env_dev
+          echo "CONNECTION_STRING=${{ secrets.CONNECTION_STRING }}" >> .env_dev
+          echo "DB_NAME=${{ secrets.DB_NAME }}" >> .env_dev
+
       - name: 🛠️ Run build_runner
-        run: flutter pub run build_runner build --delete-conflicting-outputs
+        run: flutter pub run build_runner build --delete-conflicting-outputs --define=envied_generator=env=dev
 
       - name: 🌐 Build Flutter Web
         run: flutter build web
@@ -36,6 +48,6 @@ jobs:
           repoToken: ${{ secrets.GITHUB_TOKEN }}
           firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_AYUSH_BAJRACHARYA }}
           channelId: live
-          projectId: ayush-bajracharya
-          target: default  # or your Firebase target name if you set one
-          entryPoint: build/web  # tell Firebase where the build is
+          projectId: ${{ secrets.PROJECT_ID }}
+          target: default
+          entryPoint: build/web
