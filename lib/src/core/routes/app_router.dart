@@ -11,5 +11,7 @@ class AppRouter extends $AppRouter {
   @override
   final List<AutoRoute> routes = [
     AutoRoute(page: HomeRoute.page, initial: true),
+    AutoRoute(page: RestaurantListRoute.page),
+    AutoRoute(page: AddRestaurantRoute.page),
   ];
 }

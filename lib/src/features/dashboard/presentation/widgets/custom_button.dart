@@ -10,6 +10,7 @@ class CustomButton extends StatefulWidget {
     this.foregroundColor = kBlack,
     this.shadowColor,
     required this.onPressed,
+    required this.isDisabled,
     required this.icon,
   });
   final String label;
@@ -17,6 +18,7 @@ class CustomButton extends StatefulWidget {
   final Color foregroundColor;
   final Color? shadowColor;
   final VoidCallback onPressed;
+  final bool isDisabled;
   final IconData icon;
   @override
   State<CustomButton> createState() => _CustomButtonState();
@@ -30,7 +32,7 @@ class _CustomButtonState extends State<CustomButton> {
     final labelStyle = context.adaptive(Theme.of(context).textTheme.bodySmall,
         Theme.of(context).textTheme.bodyMedium);
     return GestureDetector(
-      onTap: widget.onPressed,
+      onTap: widget.isDisabled ? null : widget.onPressed,
       child: MouseRegion(
         onHover: (PointerEvent event) {
           setState(() {

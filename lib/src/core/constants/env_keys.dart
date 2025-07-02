@@ -9,4 +9,6 @@ class EnvKeys {
   static const String messagingSenderIdKey = 'MESSAGING_SENDER_ID';
   static const String appIdKey = 'APP_ID';
   static const String measurementIdKey = 'MEASUREMENT_ID';
+  static const String mongoDbConnectionString = 'CONNECTION_STRING';
+  static const String mongoDbName = 'DB_NAME';
 }

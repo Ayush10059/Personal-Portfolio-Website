@@ -131,8 +131,10 @@ class _IntroductionScreenState extends State<IntroductionScreen>
           ),
           verticalSpaceMassive,
           CustomButton(
+            isDisabled: false,
             label: ksSeeMyWork,
-            onPressed: ksLinkedInLink.launchWebsite,
+            // onPressed: () => context.router.push(const RestaurantListRoute()),
+            onPressed: () {},
             icon: kiArrowForward,
           ),
           context.percentSizedBox(pHeight: context.adaptive(s12, s10)),
