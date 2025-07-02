@@ -3,6 +3,7 @@ import 'package:cv/src/core/typedefs/typedefs.dart';
 import 'package:cv/src/features/restaurant/data/models/restaurant_dto.dart';
 import 'package:cv/src/features/restaurant/data/source/restaurant_remote_source.dart';
 import 'package:cv/src/features/restaurant/domain/repository/restaurant_repository.dart';
+
 import 'package:injectable/injectable.dart';
 
 @LazySingleton(as: RestaurantRepository)
