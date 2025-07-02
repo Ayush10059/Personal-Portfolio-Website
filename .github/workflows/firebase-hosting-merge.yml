@@ -49,5 +49,4 @@ jobs:
           firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_AYUSH_BAJRACHARYA }}
           channelId: live
           projectId: ${{ secrets.PROJECT_ID }}
-          target: default
           entryPoint: .
